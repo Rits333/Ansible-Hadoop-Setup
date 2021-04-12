@@ -4,6 +4,7 @@ Hadoop setup using Ansible
 Configure Hadoop and starting cluster services using Ansible Playbook
 
 ![Hadoop Logo](https://github.com/Rits333/Ansible-Hadoop-Setup/blob/master/images/download%20(1).png)
+<img src="<img src="url" alt="alt text" width="whatever" height="whatever">" alt="Ansible" width="200" height="100">
 
 Here I am Writing some prerequisite to run this 
 
