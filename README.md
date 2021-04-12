@@ -13,5 +13,7 @@ Here I am Writing some prerequisite to run this
 
 
 <h2>Here are some images After complete setup how it looks in  **CLI**  and  **WEB UI** also</h2>
+
 ![GUI](https://github.com/Rits333/Ansible-Hadoop-Setup/blob/master/images/Screenshot%202020-12-07%20132341.png)
+
 ![CLI ](https://github.com/Rits333/Ansible-Hadoop-Setup/blob/master/images/Screenshot%202020-12-07%20132116.png)
