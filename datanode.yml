@@ -1,0 +1,41 @@
+- hosts : datanode
+  vars_prompt:
+          - name: data_dir
+            prompt: "Enter directary name"
+            private: no
+
+          - name: nn_ip
+            prompt: "Enter namnode ip:-"
+            private: no  
+  tasks :
+    - name : "coping jdk software"
+      copy :
+           src : "/root/jdk-8u171-linux-x64.rpm"
+           dest : "/root/"
+    - name : "coping  hadoop software"
+      copy :
+           src : "/root/hadoop-1.2.1-1.x86_64.rpm"
+           dest :  "/root/"
+
+    - name : "installation of jdk "
+      command: "rpm -ivh jdk-8u171-linux-x64.rpm"
+      ignore_errors: yes
+    - name :
+      command: "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force"
+
+    - name: "To create DN Directory"
+      file: 
+            path : "{{data_dir}}"
+            state: directory 
+ 
+    - name: " TO configure core site file"
+      template: 
+            src : "/root/ansible/hadoop/core-site.xml"
+            dest : "/etc/hadoop"
+    - name: " TO configure hdfs file"
+      template: 
+            src : "/root/ansible/hadoop/hdfs-site.xml"
+            dest : "/etc/hadoop"
+    - name: "TO start service"
+      command: 'hadoop-daemon.sh start datanode'      
+            
